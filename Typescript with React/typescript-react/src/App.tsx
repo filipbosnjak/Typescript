@@ -22,7 +22,7 @@ const App: React.FC = () => {
     name: "Filip",
     age: 24,
     ok: true,
-    func: () => {
+    greeting: () => {
       return person.name; //this.name does not work
     },
   };

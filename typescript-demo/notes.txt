@@ -1,0 +1,16 @@
+Typescript with node setup
+
+npm init -y
+
+npm install -D @types/node typescript // - for typescript to behave with node
+
+npm install nodemon
+
+"scripts": {
+    "watch": "tsc -w",
+    "dev": "nodemon dist/index.js",
+    "start": "node dist/index.js",
+    "start2": "ts-node src/index.ts"
+  },
+
+npm run dev // -> runs index.js in livereload fashion

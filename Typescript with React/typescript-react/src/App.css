@@ -8,3 +8,6 @@
 .App {
   margin: 20px;
 }
+.compl {
+  text-decoration: line-through;
+}

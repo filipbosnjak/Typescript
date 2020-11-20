@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import TextField from "./TextField";
+import TodoApp from "./TodoApp";
 
 const App: React.FC = () => {
   class MyPerson {
@@ -36,6 +37,7 @@ const App: React.FC = () => {
       {/*React now yells at us if we dont pass correct number and type props */}
       {/*Ctrl + space -> list of the props needed*/}
       <TextField person={person} />
+      <TodoApp />
     </div>
   );
 };

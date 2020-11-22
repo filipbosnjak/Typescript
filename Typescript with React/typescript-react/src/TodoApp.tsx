@@ -30,6 +30,10 @@ const TodoApp = () => {
             ? { ...todo, completed: !todo.completed }
             : todo;
         });
+      case "DELETE":
+        return state.filter((todo, index) => {
+          return index !== action.payload;
+        });
       default:
         return state;
     }
@@ -65,7 +69,7 @@ const TodoApp = () => {
     });
     setNewTodo("");
   };
-
+  console.log(todos);
   return (
     <React.Fragment>
       <form onSubmit={handleSubmit}>
@@ -76,17 +80,28 @@ const TodoApp = () => {
       <div>
         {todos.map((todo, index) => {
           return (
-            <div
-              key={index}
-              className={todo.completed ? "compl" : "notCompl"}
-              onClick={() => {
-                dispatch({
-                  type: "COMPLETED",
-                  payload: index,
-                });
-              }}
-            >
-              {todo.todo}
+            <div className="todo" key={todo.id}>
+              <div
+                className={todo.completed ? "compl" : "notCompl"}
+                onClick={() => {
+                  dispatch({
+                    type: "COMPLETED",
+                    payload: index,
+                  });
+                }}
+              >
+                {todo.todo}
+              </div>
+              <button
+                onClick={() => {
+                  dispatch({
+                    type: "DELETE",
+                    payload: index,
+                  });
+                }}
+              >
+                Delete
+              </button>
             </div>
           );
         })}

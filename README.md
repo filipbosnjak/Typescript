@@ -1,2 +1,0 @@
-# Typescript
-Typscript projects

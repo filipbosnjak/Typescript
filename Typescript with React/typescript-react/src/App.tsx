@@ -1,5 +1,7 @@
+import { count } from "console";
 import React from "react";
 import "./App.css";
+import Counter from "./Counter";
 import TextField from "./TextField";
 import TodoApp from "./TodoApp";
 
@@ -38,6 +40,20 @@ const App: React.FC = () => {
       {/*Ctrl + space -> list of the props needed*/}
       <TextField person={person} />
       <TodoApp />
+      <Counter>
+        {(count, setCount) => (
+          <div>
+            {count}
+            <button
+              onClick={() => {
+                setCount((current) => current + 1);
+              }}
+            >
+              Inc
+            </button>
+          </div>
+        )}
+      </Counter>
     </div>
   );
 };
